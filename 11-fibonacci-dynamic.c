@@ -2,17 +2,15 @@
 
 int fibo(int n)
 {
-    int previous = 1;
-    int current = 1;
-    int next = 1;
+    int fib[n+1];
     int i;
-    for (i = 3; i <= n; i++)
-    {
-        next = current + previous;
-        previous = current;
-        current = next;
-    }
-    return next;
+    fib[0] = 0;
+    fib[1] = 1;
+
+    for (i = 2; i < n + 1; i++)
+        fib[i] = fib[i - 1] + fib[i - 2];
+
+    return fib[n];
 }
 
 
